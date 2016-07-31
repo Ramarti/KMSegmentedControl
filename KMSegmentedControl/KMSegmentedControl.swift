@@ -331,7 +331,7 @@ public enum KMSegmentedControlError:ErrorType {
     
     // MARK : Programatic button selection
     public func setSelectedIndex(index:Int) throws {
-        guard index > 0 && index <= items.count - 1 else {
+        guard index >= 0 && index <= items.count - 1 else {
             throw KMSegmentedControlError.WrongSelectedIndex(maxIndex:items.count-1)
         }
         if let selectedIndex = selectedIndex {
